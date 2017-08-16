@@ -1,0 +1,23 @@
+#!/bin/sh
+# postinst script for dht11-chip
+#
+# see: dh_installdeb(1)
+
+set -e
+
+case "$1" in
+    configure)
+	rmmod dht11 &> /dev/null || true
+	modprobe dht11
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+exit 0

@@ -1,0 +1,10 @@
+Package: dht11-chip
+Version: 1.0-1
+Section: embedded
+Priority: optional
+Maintainer: Vilppu Vuorinen <vilppu.jotain@gmail.com>
+Architecture: armhf
+Depends:
+Description: dth11 kernel module and device tree overlays
+ Contains device tree overlay autoload service and some
+ extra overlays.
