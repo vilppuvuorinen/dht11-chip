@@ -6,8 +6,8 @@ dht11 support for C.H.I.P:
 * dht11 kernel module modified to set 24 MHz PIO Interrupt Clock Select
   automatically.
 * Device tree overlay autoload `systemd` oneshot service.
-* Device tree overlays for 2 sensors. One connected to PWM0 (dht11$0)
-  and the other to AP-EINT3 (dht11@0).
+* Device tree overlays for 2 sensors. One connected to `PWM0` (`dht11@1`)
+  and the other to `AP-EINT3` (`dht11@0`).
 * Test script `probe-dht11` in `/usr/bin`
 
 ## Installing
@@ -30,6 +30,11 @@ script.
 [2017-08-18T20:44:03+0300 - dht11@0]: T=24.0C RH=34.0%
 [2017-08-18T20:44:05+0300 - dht11@0]: T=24.0C RH=34.0%
 ```
+
+Only `AP-EINT3` is initially configured with device tree overlays. Move
+`*.dtbo` files from `/opt/autoload-dtbo/disabled` `/opt/autoload-dtbo/enabled`
+or vice versa to change this configuration. Other device tree overlays can also
+be loaded using the same service.
 
 ## Included works
 
